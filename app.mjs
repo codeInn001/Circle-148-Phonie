@@ -10,6 +10,10 @@ function startApp() {
     if(header) {
       header.textContent = 'make some magic here!!';
     }
+  
+  }
+
+  create()
   };
   
   // ======= DO NOT EDIT ============== //

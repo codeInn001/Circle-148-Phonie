@@ -4,16 +4,14 @@ function startApp() {
     // so create and use/call additional functions from here
   
     // pls remove the below and make some magic in here!
-    console.log('make magic in here!');
+ 
+    const navLinks = document.querySelector('.navlinks');
+const showMenu = document.querySelector('.menu_bar');
+showMenu.addEventListener('click',()=>{
+  navLinks.classList.toggle('nav_active')
+})
   
-    const header = document.querySelector('h2');
-    if(header) {
-      header.textContent = 'make some magic here!!';
-    }
-  
-  }
 
-  create()
   };
   
   // ======= DO NOT EDIT ============== //

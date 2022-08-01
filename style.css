@@ -176,7 +176,11 @@ color: #241A2B;
   }
   .discount_content{
     flex-direction: column-reverse;
-  }
+ 
+margin-top: 2rem;
+
+}
+  
   .discount_content h1{
 font-style: normal;
 font-weight: 500;

@@ -101,6 +101,7 @@ function startApp() {
   function autosuggest() {
     const input = document.querySelector("input.tel");
     const suggestions = document.querySelector(".suggestions");
+    console.log(suggestions)
 
     let ALL_NETWORK = [
       ...AIRTEL,

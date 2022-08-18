@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phonie</title>
+  <title>Name of chosen challenge</title>
 
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/ba6ce10653.js" crossorigin="anonymous"></script>
@@ -39,10 +39,7 @@
       <!--  beginning of page content1-->
       <div class="discount_content">
         <div class="discount">
-
-
-          <h1>Get 50% discount on every recharge with Altcircle-148</h1>
-
+          <h1>Get 50% discount on every recharge with Altcircle</h1>
           <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. </p>
           <button class="get_started_1">
             <a href="./form.html">
@@ -151,9 +148,7 @@
       <hr>
 
       <div class="footer-bottom">
-
-        <p>&copy; 2022 AltCircle-148. All rights reserved</p>
-
+        <p>&copy; 2022 AltCircle. All rights reserved</p>
       </div>
     </footer>
   

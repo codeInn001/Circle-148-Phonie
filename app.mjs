@@ -6,11 +6,17 @@ function startApp() {
   // pls remove the below and make some magic in here!
 
   // responsive navbar
-  const navLinks = document.querySelector(".navlinks");
-  const showMenu = document.querySelector(".menu_bar");
-  showMenu.addEventListener("click", () => {
-    navLinks.classList.toggle("nav_active");
-  });
+
+  function displayNavbar() {
+    const navLinks = document.querySelector(".navlinks");
+    const showMenu = document.querySelector(".menu_bar");
+    showMenu.addEventListener("click", () => {
+      navLinks.classList.toggle("nav_active");
+    });
+  }
+
+  displayNavbar();
+
 
   const MTN = [703, 706, 803, 806, 810, 813, 814, 816, 903, 906, 913];
 
@@ -36,53 +42,110 @@ function startApp() {
     let firstName = document.querySelector(".first_name").value || "";
     let lastName = document.querySelector(".last_name").value || "";
 
-    if (userNumber.startsWith(countryCodeWithPlus)) {
-      userNumber = userNumber.slice(countryCodeWithPlus.length);
-      console.log(userNumber);
-    } else if (userNumber.startsWith(countryCode)) {
-      userNumber = userNumber.slice(countryCode.length);
-      console.log(userNumber);
+    function sliceInputValue() {
+      if (userNumber.startsWith(countryCodeWithPlus)) {
+        userNumber = userNumber.slice(countryCodeWithPlus.length);
+      } else if (userNumber.startsWith(countryCode)) {
+        userNumber = userNumber.slice(countryCode.length);
+      }
     }
 
-    console.log(userNumber, Number(userNumber));
+    sliceInputValue();
+
     const userNumberWithoutZero = Number(userNumber);
     const firstThreeDigit = userNumberWithoutZero.toString().slice(0, 3);
     const convertToNumber = Number(firstThreeDigit);
 
     let network;
-    if (MTN.includes(convertToNumber)) {
-      network = "mtn";
-    } else if (AIRTEL.includes(convertToNumber)) {
-      network = "airtel";
-    } else if (GLO.includes(convertToNumber)) {
-      network = "glo";
-    } else if (NINE_MOBILE.includes(convertToNumber)) {
-      network = "9mobile";
-    } else if (NTEL.includes(convertToNumber)) {
-      network = "ntel";
-    } else if (SMILE.includes(convertToNumber)) {
-      network = "smile";
-    } else if (MULTILINKS.includes(convertToNumber)) {
-      network = "multilinks";
-    } else {
-      network = false;
+
+
+    function checkNetwork() {
+      if (MTN.includes(convertToNumber)) {
+        network = "mtn";
+      } else if (AIRTEL.includes(convertToNumber)) {
+        network = "airtel";
+      } else if (GLO.includes(convertToNumber)) {
+        network = "glo";
+      } else if (NINE_MOBILE.includes(convertToNumber)) {
+        network = "9mobile";
+      } else if (NTEL.includes(convertToNumber)) {
+        network = "ntel";
+      } else if (SMILE.includes(convertToNumber)) {
+        network = "smile";
+      } else if (MULTILINKS.includes(convertToNumber)) {
+        network = "multilinks";
+      } else {
+        network = false;
+      }
     }
 
-    console.log(firstName, lastName);
-    const image = document.createElement("img");
-    const span = document.createElement("span");
-    span.innerHTML = network
-      ? `Hi, ${firstName} ${lastName} Your network provider is`
-      : "Please enter a valid number and try again";
+    checkNetwork();
 
-    image.setAttribute("src", network ? `./images/${network}.svg` : "");
+    function displayNetworkImage() {
+      const image = document.createElement("img");
+      const span = document.createElement("span");
+      span.innerHTML = network
+        ? `Hi, ${firstName} ${lastName} Your network provider is`
+        : "Please enter a valid number and try again";
 
-    networkImage.classList.remove("hide");
-    networkImage.classList.add("show");
-    networkImage.innerHTML = "";
-    networkImage.appendChild(span);
-    networkImage.appendChild(image);
+      image.setAttribute("src", network ? `./images/${network}.svg` : "");
+
+      networkImage.classList.remove("hide");
+      networkImage.classList.add("show");
+      networkImage.innerHTML = "";
+      networkImage.appendChild(span);
+      networkImage.appendChild(image);
+    }
+
+    displayNetworkImage();
   });
+
+  function autosuggest() {
+    const input = document.querySelector("input.tel");
+    const suggestions = document.querySelector(".suggestions");
+    
+
+    let ALL_NETWORK = [
+      ...AIRTEL,
+      ...MTN,
+      ...GLO,
+      ...MULTILINKS,
+      ...NINE_MOBILE,
+      ...NTEL,
+      ...SMILE,
+    ];
+
+    input.addEventListener("input", (e) => {
+      suggestions.classList.remove("hide");
+      let inputValue = e.target.value;
+      let lengthOfInput = e.target.value.length;
+
+      suggestions.innerHTML = " ";
+      ALL_NETWORK.forEach((networkLine) => {
+        let matchLetter = networkLine
+          .toString()
+          .slice(0, inputValue.length - 1);
+
+       
+
+        if (matchLetter === inputValue.slice(1) && inputValue.length > 1) {
+          suggestions.innerHTML += `<p>0${networkLine}</p>`;
+        }
+      });
+
+      let elementChildren = Array.from(suggestions.children);
+
+      elementChildren.forEach((element) => {
+        element.addEventListener("click", (e) => {
+          input.value = "0" + Number(` ${e.target.textContent}`);
+          suggestions.classList.add("hide");
+          input.focus();
+        });
+      });
+    });
+  }
+
+  autosuggest();
 }
 
 // ======= DO NOT EDIT ============== //

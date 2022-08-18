@@ -156,7 +156,15 @@ h1 {
   display: none;
 }
 
+.hide {
+  display: none;
+}
+
 .network-image.show {
+  display: block;
+}
+
+.show {
   display: block;
 }
 
@@ -166,6 +174,18 @@ h1 {
   display: inline-block;
   margin-left: 10px;
   vertical-align: middle;
+}
+
+.suggestions {
+  /* border: 2px solid red; */
+  position: relative;
+  top: -102px;
+  z-index: 5;
+  background-color: var(--custom-color);
+  padding-left: 8%;
+  padding-top: 10px;
+  font-size: 0.8rem;
+  line-height: 20px;
 }
 
 .button3 {

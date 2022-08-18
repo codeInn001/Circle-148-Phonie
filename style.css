@@ -5,6 +5,17 @@
   box-sizing: border-box;
   font-family: "Space Grotesk", sans-serif;
 }
+
+html {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+}
+
 .wrapper {
   width: 94%;
   max-width: 1250px;
@@ -13,6 +24,9 @@
 
 /* header css section */
 
+.header {
+  margin: 0 auto;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -100,7 +114,6 @@ a {
 }
 
 .discount_content p {
-  height: 62px;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -293,6 +306,25 @@ a {
 /* End of page content 2 */
 
 /* responsive view */
+@media screen and (max-width: 1060px) {
+  .discount {
+    padding: 20px 40px;
+    min-width: 70%;
+  }
+
+  .get_started_1 {
+    margin-top: 30px;
+  }
+
+  .discount h1 {
+    font-size: 2rem;
+    line-height: 40px;
+  }
+
+  .boy_img {
+    display: none;
+  }
+}
 @media screen and (max-width: 706px) {
   * {
     margin: 0;
@@ -332,7 +364,7 @@ a {
   }
 
   .discount {
-    padding: 0;
+    padding: 20px;
   }
 
   .discount_content p {

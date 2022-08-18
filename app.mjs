@@ -17,6 +17,7 @@ function startApp() {
 
   displayNavbar();
 
+
   const MTN = [703, 706, 803, 806, 810, 813, 814, 816, 903, 906, 913];
 
   const AIRTEL = [708, 802, 808, 812, 701, 902, 901, 907];
@@ -56,6 +57,7 @@ function startApp() {
     const convertToNumber = Number(firstThreeDigit);
 
     let network;
+
 
     function checkNetwork() {
       if (MTN.includes(convertToNumber)) {

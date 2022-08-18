@@ -6,6 +6,7 @@
   font-family: "Space Grotesk", sans-serif;
 }
 
+
 html {
   margin: 0px;
   height: 100%;
@@ -24,9 +25,11 @@ body {
 
 /* header css section */
 
+
 .header {
   margin: 0 auto;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -306,6 +309,7 @@ a {
 /* End of page content 2 */
 
 /* responsive view */
+
 @media screen and (max-width: 1060px) {
   .discount {
     padding: 20px 40px;
@@ -325,6 +329,7 @@ a {
     display: none;
   }
 }
+
 @media screen and (max-width: 706px) {
   * {
     margin: 0;

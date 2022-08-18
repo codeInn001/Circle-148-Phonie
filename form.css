@@ -156,9 +156,11 @@ h1 {
   display: none;
 }
 
+
 .hide {
   display: none;
 }
+
 
 .network-image.show {
   display: block;
@@ -168,6 +170,7 @@ h1 {
   display: block;
 }
 
+
 .network-image img {
   max-width: 40px;
   max-height: 40px;
@@ -175,6 +178,7 @@ h1 {
   margin-left: 10px;
   vertical-align: middle;
 }
+
 
 .suggestions {
   /* border: 2px solid red; */
@@ -187,6 +191,7 @@ h1 {
   font-size: 0.8rem;
   line-height: 20px;
 }
+
 
 .button3 {
   background-color: #0047dc;

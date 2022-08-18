@@ -101,7 +101,7 @@ function startApp() {
   function autosuggest() {
     const input = document.querySelector("input.tel");
     const suggestions = document.querySelector(".suggestions");
-    console.log(suggestions)
+    
 
     let ALL_NETWORK = [
       ...AIRTEL,
@@ -124,7 +124,7 @@ function startApp() {
           .toString()
           .slice(0, inputValue.length - 1);
 
-        console.log(matchLetter, inputValue.slice(1));
+       
 
         if (matchLetter === inputValue.slice(1) && inputValue.length > 1) {
           suggestions.innerHTML += `<p>0${networkLine}</p>`;
